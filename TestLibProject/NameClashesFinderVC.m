@@ -27,28 +27,27 @@
     Class toCheckCls = [NameClashesFinderVC class];
     //Class toCheckCls = [NSObject class];
     
-    NSArray *properties = [toCheckCls properties];
-    NSLog (@"properties: %@", properties);
-    
-    NSArray *instanceVariables = [toCheckCls instanceVariables];
-    NSLog (@"instanceVariables: %@", instanceVariables);
+//    NSArray *properties = [toCheckCls properties];
+//    NSLog (@"properties: %@", properties);
+//    
+//    NSArray *instanceVariables = [toCheckCls instanceVariables];
+//    NSLog (@"instanceVariables: %@", instanceVariables);
     
     NSArray *classMethods = [toCheckCls classMethods];
-    NSLog (@"classMethods: %@", classMethods);
+    //NSLog (@"classMethods: %@", classMethods);
+    NSLog (@"重复的类方法: ");
+    [self showDuplicateMethodStringWithArray:classMethods];
     
     NSArray *instanceMethods = [toCheckCls instanceMethods];
-    NSLog (@"instanceMethods: %@", instanceMethods);
+    //NSLog (@"instanceMethods: %@", instanceMethods);
+    NSLog (@"重复的实例方法: ");
+    [self showDuplicateMethodStringWithArray:instanceMethods];
     
-    NSArray *protocols = [toCheckCls protocols];
-    NSLog (@"protocols: %@", protocols);
-    
-    if (protocols.count > 0) {
-        NSDictionary *description = [toCheckCls descriptionForProtocol:protocols.firstObject];
-        NSLog (@"description: %@", description);
-    }
-    
-    NSString *parentClassHierarchy = [toCheckCls parentClassHierarchy];
-    NSLog (@"parentClassHierarchy: %@", parentClassHierarchy);
+//    NSArray *protocols = [toCheckCls protocols];
+//    NSLog (@"protocols: %@", protocols);
+//    
+//    NSString *parentClassHierarchy = [toCheckCls parentClassHierarchy];
+//    NSLog (@"parentClassHierarchy: %@", parentClassHierarchy);
     
     
 //    NSLog(@"获取所有加载的objective-c框架和动态库的名称");
@@ -79,8 +78,30 @@
 //    for (int i = 0; i < outCount; i++) {
 //        NSLog(@"class name: %s", classes[i]);
 //    }
+}
+
+- (void)showDuplicateMethodStringWithArray:(NSArray *)methodStringArray {
+    NSMutableDictionary *methodToCountDict = [NSMutableDictionary dictionary];
     
+    for (NSString *methodString in methodStringArray) {
+        NSNumber *count = [methodToCountDict objectForKey:methodString];
+        if (!count) {
+            [methodToCountDict setObject:@(1) forKey:methodString];
+        } else {
+            [methodToCountDict setObject:@([count intValue] + 1) forKey:methodString];
+        }
+    }
     
+    for (NSString *methodString in [methodToCountDict allKeys]) {
+        NSNumber *count = [methodToCountDict objectForKey:methodString];
+        if (count && ([count intValue] > 1)) {
+            NSLog (@"%@ %@次", methodString, count);
+        }
+    }
+}
+
+- (void)justForTest {
+    NSLog (@"Just for test in class");
 }
 
 - (void)didReceiveMemoryWarning {

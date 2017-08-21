@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3333C7141F4B62D70010A855 /* NameClashesFinderVC+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3333C7131F4B62D70010A855 /* NameClashesFinderVC+Category.m */; };
 		B56ECF521F4AAEDC004867AD /* NameClashesFinderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF501F4AAEDC004867AD /* NameClashesFinderVC.m */; };
 		B56ECF531F4AAEDC004867AD /* NameClashesFinderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56ECF511F4AAEDC004867AD /* NameClashesFinderVC.xib */; };
 		B56ECF571F4ABE35004867AD /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF561F4ABE35004867AD /* NSObject+DLIntrospection.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3333C7121F4B62D70010A855 /* NameClashesFinderVC+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NameClashesFinderVC+Category.h"; sourceTree = "<group>"; };
+		3333C7131F4B62D70010A855 /* NameClashesFinderVC+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NameClashesFinderVC+Category.m"; sourceTree = "<group>"; };
 		33C755461B345207005AF2BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C755471B345207005AF2BF /* TestLibProject_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLibProject_Tests.m; sourceTree = "<group>"; };
 		B56ECF4F1F4AAEDC004867AD /* NameClashesFinderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameClashesFinderVC.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				B56ECF591F4ABFBD004867AD /* NSObject+AnotherCategory.m */,
 				B5E497F7192DE3F1000E9D95 /* BenAppDelegate.h */,
 				B5E497F8192DE3F1000E9D95 /* BenAppDelegate.m */,
+				3333C7121F4B62D70010A855 /* NameClashesFinderVC+Category.h */,
+				3333C7131F4B62D70010A855 /* NameClashesFinderVC+Category.m */,
 				B56ECF4F1F4AAEDC004867AD /* NameClashesFinderVC.h */,
 				B56ECF501F4AAEDC004867AD /* NameClashesFinderVC.m */,
 				B56ECF511F4AAEDC004867AD /* NameClashesFinderVC.xib */,
@@ -274,6 +279,7 @@
 				B5E497F9192DE3F1000E9D95 /* BenAppDelegate.m in Sources */,
 				B56ECF571F4ABE35004867AD /* NSObject+DLIntrospection.m in Sources */,
 				B56ECF521F4AAEDC004867AD /* NameClashesFinderVC.m in Sources */,
+				3333C7141F4B62D70010A855 /* NameClashesFinderVC+Category.m in Sources */,
 				B5E497F5192DE3F1000E9D95 /* main.m in Sources */,
 				B56ECF5A1F4ABFBD004867AD /* NSObject+AnotherCategory.m in Sources */,
 			);
